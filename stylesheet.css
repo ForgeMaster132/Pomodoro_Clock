@@ -35,8 +35,8 @@ i {
 
 #clock-name {
     position: absolute;
-    left: 15%;
-    font-size: 300%;
+    left: 18%;
+    font-size: 250%;
     padding: 0px;
     margin: 0px;
 }
@@ -60,10 +60,18 @@ i {
     top: 18%;
 }
 
-.set-heading {
-    position: relative;
+#set-session-heading {
+    position: inherit;
     text-align: center;
-    top: -100%;
+    top: -15%;
+    left: 22%;
+}
+
+#set-break-heading {
+    position: inherit;
+    text-align: center;
+    top: -15%;
+    left: 28%;
 }
 
 .set-number {
@@ -102,24 +110,24 @@ i {
 
 #play {
     position: inherit;
-    left: 20%;
+    left: 10%;
     top: 5%;
 }
 
 #refresh {
     position: inherit;
-    right: 20%;
+    right: 10%;
     top: 5%;
 }
 
 #pause {
     position: inherit;
     top: 70%;
-    left: 20%;
+    left: 10%;
 }
 
 #stop {
     position: inherit;
     top: 70%;
-    right: 20%;
+    right: 10%;
 }
