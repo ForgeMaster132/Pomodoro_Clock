@@ -1,4 +1,4 @@
-
+let canPlay = "yes";
 let canSet = "yes";
 
 //Setting Session Time
@@ -68,6 +68,8 @@ let min = 0;
 let sec = 0;
 
 function timer(){
+    if(canPlay == "yes"){
+    canPlay = "no";
     canSet = "no";
     paused = "no";
     let starter = document.getElementById("session-set-number").textContent;
@@ -113,6 +115,7 @@ function timer(){
                 }
                 heading = document.getElementById("session-break").textContent;
     },1000);
+    }
 };
 
 //
@@ -122,6 +125,7 @@ function timer(){
 document.getElementById("play").addEventListener("click",timer);
 
 document.getElementById("pause").addEventListener("click",function(){
+    canPlay = "yes";
     paused = "yes";
 });
 
@@ -129,12 +133,14 @@ document.getElementById("stop").addEventListener("click",function(){
     let stopTime = document.getElementById("session-set-number").textContent;
     paused = "yes";
     canSet = "yes";
+    canPlay = "yes";
     document.getElementById("time").textContent = stopTime + ":00";
 });
 
 document.getElementById("refresh").addEventListener("click",function(){
     paused = "yes";
     canSet = "yes";
+    canPlay = "yes";
     document.getElementById("session-break").textContent = " Session ";
     document.getElementById("session-set-number").textContent = "25";
     document.getElementById("break-set-number").textContent = "5";
