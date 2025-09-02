@@ -74,7 +74,7 @@ function timer(){
     paused = "no";
     let starter = document.getElementById("session-set-number").textContent;
     starter = parseInt(starter);
-    let heading = document.getElementById("session-break").textContent;
+    let heading = document.getElementById("session-break").textContent.trim();
     let time = document.getElementById("time").textContent.split(":");
     min = time[0];
     sec = 60;
@@ -102,18 +102,18 @@ function timer(){
             min--;
             sec = 60;
         }
-            if(min < 0 && heading == "Break"){
+            if(min < 0 && heading === "Break"){
                 min = document.getElementById("session-set-number").textContent;
                 min = parseInt(min) - 1;
                 sec = 60;
-                document.getElementById("session-break").textContent = " Session ";
-            } else if(min < 0 && heading == " Session "){
+                document.getElementById("session-break").textContent = "Session";
+            } else if(min < 0 && heading === "Session"){
                 min = document.getElementById("break-set-number").textContent;
                 min = parseInt(min) - 1;
                 sec = 60;
                 document.getElementById("session-break").textContent = "Break";
                 }
-                heading = document.getElementById("session-break").textContent;
+                heading = document.getElementById("session-break").textContent.trim();
     },1000);
     }
 };
@@ -141,7 +141,7 @@ document.getElementById("refresh").addEventListener("click",function(){
     paused = "yes";
     canSet = "yes";
     canPlay = "yes";
-    document.getElementById("session-break").textContent = " Session ";
+    document.getElementById("session-break").textContent = "Session";
     document.getElementById("session-set-number").textContent = "25";
     document.getElementById("break-set-number").textContent = "5";
     document.getElementById("time").textContent = "25:00";
